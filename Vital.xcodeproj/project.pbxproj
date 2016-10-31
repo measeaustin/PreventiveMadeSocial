@@ -17,15 +17,15 @@
 		A82BC7811D982EAE0048D933 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82BC7801D982EAE0048D933 /* FBSDKLoginKit.framework */; };
 		A82BC7831D982EBA0048D933 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82BC7821D982EBA0048D933 /* FBSDKCoreKit.framework */; };
 		A83789201DB466A3008B9529 /* JoinGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A837891F1DB466A3008B9529 /* JoinGroupViewController.swift */; };
-		A83789221DB466CD008B9529 /* UserVitalTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83789211DB466CD008B9529 /* UserVitalTeamsViewController.swift */; };
 		A83789241DB498F5008B9529 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83789231DB498F5008B9529 /* User.swift */; };
 		A83789261DB49911008B9529 /* VitalTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83789251DB49911008B9529 /* VitalTeam.swift */; };
-		A83789281DB4B5E3008B9529 /* VitalTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83789271DB4B5E3008B9529 /* VitalTeamCell.swift */; };
 		A837892A1DBD45A2008B9529 /* VitalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83789291DBD45A2008B9529 /* VitalTableViewController.swift */; };
 		A844E1841DB4392300B21666 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A844E1831DB4392300B21666 /* RegisterViewController.swift */; };
 		A84A669B1DADF56B00E615A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A84A669A1DADF56B00E615A2 /* Main.storyboard */; };
 		A84A669D1DADF58900E615A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A84A669C1DADF58900E615A2 /* LaunchScreen.storyboard */; };
 		A852439C1DA064CC0031A818 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A852439B1DA064CC0031A818 /* Bolts.framework */; };
+		A8908C241DC27A3A00E14FEE /* VitalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8908C231DC27A3A00E14FEE /* VitalTableViewCell.swift */; };
+		A8DDCC181DC7BDEE007BA79A /* CreateNewGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DDCC171DC7BDEE007BA79A /* CreateNewGroupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,15 +66,15 @@
 		A82BC7801D982EAE0048D933 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Framework/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		A82BC7821D982EBA0048D933 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Framework/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A837891F1DB466A3008B9529 /* JoinGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinGroupViewController.swift; sourceTree = "<group>"; };
-		A83789211DB466CD008B9529 /* UserVitalTeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserVitalTeamsViewController.swift; sourceTree = "<group>"; };
 		A83789231DB498F5008B9529 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A83789251DB49911008B9529 /* VitalTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitalTeam.swift; sourceTree = "<group>"; };
-		A83789271DB4B5E3008B9529 /* VitalTeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitalTeamCell.swift; sourceTree = "<group>"; };
 		A83789291DBD45A2008B9529 /* VitalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitalTableViewController.swift; sourceTree = "<group>"; };
 		A844E1831DB4392300B21666 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A84A669A1DADF56B00E615A2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A84A669C1DADF58900E615A2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A852439B1DA064CC0031A818 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Framework/Bolts.framework; sourceTree = "<group>"; };
+		A8908C231DC27A3A00E14FEE /* VitalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitalTableViewCell.swift; sourceTree = "<group>"; };
+		A8DDCC171DC7BDEE007BA79A /* CreateNewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewGroupViewController.swift; sourceTree = "<group>"; };
 		B37D55988F65913D16D3EC3B /* Pods-Vital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vital.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vital/Pods-Vital.release.xcconfig"; sourceTree = "<group>"; };
 		D5DC0FD832A4F4F06C52AD4A /* Pods-VitalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VitalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VitalTests/Pods-VitalTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,8 +151,8 @@
 				A83789231DB498F5008B9529 /* User.swift */,
 				A83789251DB49911008B9529 /* VitalTeam.swift */,
 				A84A669A1DADF56B00E615A2 /* Main.storyboard */,
-				A83789271DB4B5E3008B9529 /* VitalTeamCell.swift */,
-				A83789211DB466CD008B9529 /* UserVitalTeamsViewController.swift */,
+				A8DDCC171DC7BDEE007BA79A /* CreateNewGroupViewController.swift */,
+				A8908C231DC27A3A00E14FEE /* VitalTableViewCell.swift */,
 				A83789291DBD45A2008B9529 /* VitalTableViewController.swift */,
 				A837891F1DB466A3008B9529 /* JoinGroupViewController.swift */,
 				A844E1831DB4392300B21666 /* RegisterViewController.swift */,
@@ -475,14 +475,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8DDCC181DC7BDEE007BA79A /* CreateNewGroupViewController.swift in Sources */,
+				A8908C241DC27A3A00E14FEE /* VitalTableViewCell.swift in Sources */,
 				A83789201DB466A3008B9529 /* JoinGroupViewController.swift in Sources */,
 				A837892A1DBD45A2008B9529 /* VitalTableViewController.swift in Sources */,
 				A82BC74A1D972A840048D933 /* AppDelegate.swift in Sources */,
 				A83789241DB498F5008B9529 /* User.swift in Sources */,
 				A83789261DB49911008B9529 /* VitalTeam.swift in Sources */,
 				A82BC74C1D972A840048D933 /* FirstViewController.swift in Sources */,
-				A83789281DB4B5E3008B9529 /* VitalTeamCell.swift in Sources */,
-				A83789221DB466CD008B9529 /* UserVitalTeamsViewController.swift in Sources */,
 				A844E1841DB4392300B21666 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,6 +628,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Pilot-Training-Systems.Vital";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9pv-A4-QxB">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -79,14 +79,26 @@
                                     <action selector="textFieldDidEndEditing:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="OYq-Pd-JNz"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vEP-oR-VVy">
+                                <frame key="frameInset" minX="227" minY="175" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="GetPasswordText:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="tbr-Gl-7lR"/>
+                                    <action selector="textFieldDidEndEditing:" destination="9pv-A4-QxB" eventType="editingDidEnd" id="8dU-l3-BUc"/>
+                                </connections>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCJ-qJ-K1m">
-                                <frame key="frameInset" minX="168" minY="213" width="55" height="30"/>
+                                <frame key="frameInset" minX="169" minY="213" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="LoginAction:" destination="9pv-A4-QxB" eventType="touchUpInside" id="T2D-rM-aLv"/>
+                                    <segue destination="bsn-Ko-fY2" kind="show" identifier="UserVitalTeam" id="AhA-CG-EOl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,98 +111,63 @@
                         <outlet property="email" destination="Dqe-33-s5H" id="CCL-6D-yEJ"/>
                         <outlet property="login" destination="yCJ-qJ-K1m" id="XbR-eI-bp8"/>
                         <outlet property="password" destination="Ey7-P6-X3T" id="T5R-EK-XGo"/>
-                        <segue destination="0cr-eX-UoD" kind="show" identifier="UserVitalTeam" id="jle-fT-guw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
         </scene>
-        <!--User Vital Teams View Controller-->
-        <scene sceneID="f0G-Xk-3QO">
+        <!--My Vital Teams-->
+        <scene sceneID="eP8-zX-B9K">
             <objects>
-                <viewController storyboardIdentifier="UserVitalTeam" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0cr-eX-UoD" customClass="UserVitalTeamsViewController" customModule="Vital" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SG4-5k-gc3"/>
-                        <viewControllerLayoutGuide type="bottom" id="VsW-fo-4HS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Nl4-Ca-tRc">
+                <tableViewController title="My Vital Teams" id="9sl-AF-KJb" customClass="VitalTableViewController" customModule="Vital" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="RUa-gg-aFM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VMr-bc-LFT">
-                                <frame key="frameInset" minY="10" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="[$username]'s Vital Teams" id="CUk-2B-3D6">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="TAN-79-XJc">
-                                            <connections>
-                                                <segue destination="9pv-A4-QxB" kind="show" id="gLr-IW-17g"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="R77-JY-cQR">
-                                            <connections>
-                                                <segue destination="Up9-GJ-RSI" kind="show" id="FWK-br-wS4"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RNs-dZ-CSi">
-                                <frame key="frameInset" minY="135" width="375" height="532"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <tableView key="tableFooterView" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ON8-Ks-Hij">
-                                    <rect key="frame" x="0.0" y="118" width="375" height="416"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </tableView>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VitalTeamViewCell" rowHeight="90" id="Nnz-jM-eGg">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nnz-jM-eGg" id="X0V-XE-gi7">
-                                            <frame key="frameInset" width="375" height="89"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FyM-oW-QS4">
-                                                    <frame key="frameInset" minX="-70" minY="-27" width="199" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vital Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnT-qE-T0S">
-                                                    <frame key="frameInset" minX="150" minY="8" width="205" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leader: $[TeamLeads]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dc7-Qk-SWx">
-                                                    <frame key="frameInset" minX="175" minY="48" width="180" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="accessoryView" destination="qnT-qE-T0S" id="RcR-5b-Ecp"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="VitalTeams" destination="ON8-Ks-Hij" id="Wce-wL-gpa"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3jM-cE-Rij" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="VitalCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="VitalCell" textLabel="Vda-sM-VPa" detailTextLabel="2C2-gc-iLJ" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="FIs-ya-lZC" customClass="VitalTableViewCell" customModule="Vital" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FIs-ya-lZC" id="6Ox-y7-s5i">
+                                    <frame key="frameInset" width="375" height="89"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vda-sM-VPa">
+                                            <frame key="frameInset" minX="15" minY="27" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2C2-gc-iLJ">
+                                            <frame key="frameInset" minX="15" minY="48" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="VitalCell" label="VitalCell">
+                                    <accessibilityTraits key="traits" none="YES"/>
+                                </accessibility>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="My Vital Teams" id="flu-Qp-Sgy">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EdH-lq-CHi">
+                            <connections>
+                                <segue destination="Up9-GJ-RSI" kind="show" id="NbU-bU-AXe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7r-59-bFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-319.19999999999999" y="133.5832083958021"/>
+            <point key="canvasLocation" x="870" y="938"/>
         </scene>
-        <!--Join Group View Controller-->
+        <!--Join New Team-->
         <scene sceneID="f1r-AS-0b6">
             <objects>
                 <viewController id="Up9-GJ-RSI" customClass="JoinGroupViewController" customModule="Vital" customModuleProvider="target" sceneMemberID="viewController">
@@ -214,29 +191,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="INE-aM-czG">
-                                <frame key="frameInset" minY="14" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Join New Team" id="Xv9-qj-w6y">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Aji-Qd-q1R">
-                                            <connections>
-                                                <segue destination="0cr-eX-UoD" kind="show" id="XaE-8O-XzL"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VxO-EB-Nwm">
-                                            <connections>
-                                                <segue destination="f0w-gH-djW" kind="show" id="j8V-eq-ONs"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3fY-iJ-LTG">
-                                <frame key="frameInset" minY="165" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Find New Teams!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4s-Vx-XCf">
                                 <frame key="frameInset" minX="85" minY="122" width="205" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -244,18 +198,42 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3fY-iJ-LTG">
+                                <frame key="frameInset" minY="165" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNF-rv-ntI">
+                                <frame key="frameInset" minX="313" minY="89" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <segue destination="f0w-gH-djW" kind="show" id="OAc-zt-Ian"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Join New Team" id="Xv9-qj-w6y">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="Aji-Qd-q1R"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="VxO-EB-Nwm">
+                            <connections>
+                                <segue destination="f0w-gH-djW" kind="show" id="3Hn-rZ-Nua"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="SearchBar" destination="3fY-iJ-LTG" id="L9y-iP-DR7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="niq-iy-4ma" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860" y="407"/>
+            <point key="canvasLocation" x="1807" y="193"/>
         </scene>
-        <!--View Controller-->
+        <!--Create New Vital Group-->
         <scene sceneID="STs-oy-vKD">
             <objects>
-                <viewController id="f0w-gH-djW" sceneMemberID="viewController">
+                <viewController id="f0w-gH-djW" customClass="CreateNewGroupViewController" customModule="Vital" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GY2-e0-v2t"/>
                         <viewControllerLayoutGuide type="bottom" id="qbS-UX-2fG"/>
@@ -264,20 +242,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Qa-xI-UXr">
-                                <frame key="frameInset" minY="20" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Create New Vital Group" id="gCb-CV-ffg"/>
-                                </items>
-                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qz9-WL-J2b">
+                                <frame key="frameInset" minX="138" minY="236" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="CreateAction:" destination="f0w-gH-djW" eventType="touchUpInside" id="ACR-zs-s1x"/>
+                                    <segue destination="9sl-AF-KJb" kind="show" identifier="AddedNewTeam" id="9yu-BH-hEp"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ycw-qk-P6E">
+                                <frame key="frameInset" minX="139" minY="105" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Picture Upload" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fPu-Ah-ijK">
+                                <frame key="frameInset" minX="108" minY="174" width="159" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Create New Vital Group" id="gCb-CV-ffg">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="u6s-30-GSP">
+                            <connections>
+                                <segue destination="Up9-GJ-RSI" kind="showDetail" id="kyu-pz-SfK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="NewTeam" destination="Ycw-qk-P6E" id="yAu-qh-DvX"/>
+                        <outlet property="SubmitButton" destination="qz9-WL-J2b" id="ntD-hb-uAp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBc-cQ-Tcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1522" y="406"/>
+            <point key="canvasLocation" x="2996" y="193"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="FgT-Q0-6Yt">
@@ -384,15 +389,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4m-bm-xza" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="-385"/>
+            <point key="canvasLocation" x="2018" y="-775"/>
+        </scene>
+        <!--My Vitals-->
+        <scene sceneID="ZGh-a2-1w8">
+            <objects>
+                <navigationController title="My Vitals" automaticallyAdjustsScrollViewInsets="NO" id="bsn-Ko-fY2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mDO-iN-BD5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9sl-AF-KJb" kind="relationship" relationship="rootViewController" id="7Fb-0q-ylU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EUG-Gl-gme" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-294" y="354"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gLr-IW-17g"/>
-        <segue reference="XaE-8O-XzL"/>
-        <segue reference="FWK-br-wS4"/>
+        <segue reference="OAc-zt-Ian"/>
+        <segue reference="kyu-pz-SfK"/>
+        <segue reference="9yu-BH-hEp"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -40,6 +40,10 @@ class RegisterViewController: UIViewController {
         let password = self.PasswordTextField.text
         let confirm = ConfirmPasswordTextField.text
         
+        ThisUser.name = self.FirstNameTextField.text! + " " + self.LastNameTextField.text!
+        ThisUser.email = self.EmailTextField.text!
+        ThisUser.username = self.UsernameTextField.text!
+        ThisUser.password = self.PasswordTextField.text!
         
         if(!(email?.contains("@"))!){
             let alert = UIAlertView(title: "Invalid", message: "Invalid Email Format", delegate: self, cancelButtonTitle: "OK")
@@ -52,6 +56,7 @@ class RegisterViewController: UIViewController {
         } else {
             // go to Join Group Scene
             if ((email) != nil) {
+                // TODO: add user to Firebase
                 
                 let thisUser = User(name: first! + last!, photo: nil, username: username!, password: password!, email: email!)
                 

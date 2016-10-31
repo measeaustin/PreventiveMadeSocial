@@ -10,6 +10,8 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
+var ThisUser: User = User(name: "Temp", photo: nil, username: "temp", password: "temp",
+                          email: "@temp")!
 
 class FirstViewController: UIViewController, UITextFieldDelegate {
 
@@ -23,10 +25,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadSampleTeam()
+
         if ((FBSDKAccessToken.current()) != nil) {
             performSegue(withIdentifier: "UserVitalTeam", sender: self)
         }
@@ -57,7 +59,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
-        // Hidethe keyboard.
+        // Hide the keyboard.
         textField.resignFirstResponder()
         return true
         
@@ -65,6 +67,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField){
     }
     @IBAction func LoginAction(_ sender: AnyObject) {
+        
+        ThisUser.email = self.email.text!
+        ThisUser.password = self.password.text!
+        
         
         let email = self.email.text
         let password = self.password.text
@@ -86,6 +92,22 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
             }
             
         }
+    }
+    
+    func loadSampleTeam(){
+        
+        
+        let photo1 = UIImage(named: "keto")!
+        let user1 = User(name: "Austin M", photo: photo1, username: "temp", password: "temp",
+                         email: "@temp")
+        
+        let team1 = VitalTeam(name: "Keto2", photo: photo1, vitalFellows: [user1!], vitalLeaders: user1!)
+        
+        let team2 = VitalTeam(name: "Not Keto2", photo: photo1, vitalFellows: [user1!], vitalLeaders: user1!)
+        
+        Allteams.append(team1!)
+        Allteams.append(team2!)
+        
     }
     
    

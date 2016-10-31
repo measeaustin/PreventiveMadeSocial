@@ -8,23 +8,40 @@
 
 import UIKit
 
+var Allteams = [VitalTeam]()
+
+
 class VitalTableViewController: UITableViewController {
 
     // PROPERTIES
-    var teams = [VitalTeam]()
+    var UserTeams = [VitalTeam]()
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //self.tableView.register(VitalTableViewCell.self, forCellReuseIdentifier: "VitalCell")
+
         // Load the sample data.
         loadSampleTeam()
+        // Filter AllTeam to UserTeams
+        
+        for team in Allteams{
+            for user in team.vitalFellows { //TODO: Use .contains
+                if (user.username == ThisUser.username){
+                    UserTeams.append(team)
+               }
+            }
+        }
+        
+        //UserTeams.append(contentsOf: Allteams)
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomme∫nt the following line to display an Edit button in the navigation bar for this view controller.
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,37 +57,41 @@ class VitalTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return teams.count
+        return UserTeams.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         // Table view cells are reused and should be dequeued using a cell identifier.
-        let cellIdentifier = "VitalTeamCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "VitalCell", for: indexPath) //as! VitalTableViewCell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! VitalTeamCell
+        // Fetches the appropriate meal for the data source layout.
+        let team = UserTeams[indexPath.row]
+        /*
+        // Configure the cell TODO: Allow custom cell
+        cell.TeamName?.text = "test"
+        cell.TeamPicture?.image = team.photo
+        cell.TeamLeader?.text = team.vitalLeader.name
+         */
         
-        let team = teams[indexPath.row]
+        cell.textLabel?.text = team.name
+        cell.detailTextLabel?.text = "Leader: " + team.vitalLeader.name
+        cell.imageView?.image = team.photo
         
-        // Configure the cell
-        cell.Name.text = team.name
-        cell.Picture.image = team.photo
-        cell.TeamLeader.text = team.vitalLeader.name
-
         return cell
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -80,22 +101,22 @@ class VitalTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
-    /*
+    
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
     }
-    */
+    
 
-    /*
+    
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
+    
 
     /*
     // MARK: - Navigation
@@ -108,14 +129,16 @@ class VitalTableViewController: UITableViewController {
     */
     func loadSampleTeam(){
         
+        let photo1 = UIImage(named: "keto")!
+        let user1 = User(name: "Austin M", photo: photo1, username: "temp", password: "temp",
+                         email: "@temp")
         
+        let team1 = VitalTeam(name: "Keto3", photo: photo1, vitalFellows: [user1!], vitalLeaders: user1!)
         
-        let user1 = User(name: "Austin", photo: nil, username: "temp", password: "temp",
-                         email: "temp")
+        let team2 = VitalTeam(name: "Not Keto3", photo: photo1, vitalFellows: [user1!], vitalLeaders: user1!)
         
-        let team1 = VitalTeam(name: "Kato", photo: nil, vitalFellows: [user1!], vitalLeaders: user1!)
-        
-        teams = [team1!]
+        Allteams.append(team1!)
+        Allteams.append(team2!)
         
     }
 
