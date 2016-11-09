@@ -10,8 +10,9 @@ import UIKit
 
 class JoinGroupViewController: UIViewController {
 
-    @IBOutlet weak var SearchBar: UISearchBar!
     
+    @IBOutlet weak var JoinTeamTextField: UITextField!
+    @IBOutlet weak var JoinButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +24,14 @@ class JoinGroupViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    //func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
-        for team in Allteams {
-            if (team.name == searchBar.text){
-                team.vitalFellows.append(ThisUser)
-            }
-        }
-    }
+        //for team in Allteams {
+          //  if (team.name == searchBar.text){
+            //    team.vitalFellows.append(ThisUser)
+            //}
+        //}
+    //}
 
     /*
     // MARK: - Navigation
@@ -41,5 +42,14 @@ class JoinGroupViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func JoinClicked(_ sender: AnyObject) {
+        let s = JoinTeamTextField.text
+        for team in Allteams {
+            if (team.name == JoinTeamTextField.text){
+                UserTeams.append(team)
+                team.vitalFellows.append(ThisUser)
+            }
+        }
+    }
 
 }

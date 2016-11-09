@@ -34,6 +34,7 @@ class CreateNewGroupViewController: UIViewController {
         let photo1 = UIImage(named: "keto")!
         let newTeam2 = VitalTeam(name: NewTeam.text!, photo: photo1, vitalFellows: [ThisUser], vitalLeaders: ThisUser)
         Allteams.append(newTeam2!)
+        UserTeams.append(newTeam2!)
         performSegue(withIdentifier: "AddedNewTeam", sender: self)
     }
 

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Vital/VitalTableViewController.swift"
-            timestampString = "499633434.739434"
+            filePath = "Vital/JoinGroupViewController.swift"
+            timestampString = "500234106.819342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "JoinClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Vital/CreateNewGroupViewController.swift"
-            timestampString = "499634602.002618"
+            filePath = "Vital/JoinGroupViewController.swift"
+            timestampString = "500234106.819342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "CreateAction(_:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "JoinClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -74,6 +74,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         
         let email = self.email.text
         let password = self.password.text
+        ThisUser.name = email!
         
         if(!(email?.contains("@"))!){
             let alert = UIAlertView(title: "Invalid", message: "Invalid Email Format", delegate: self, cancelButtonTitle: "OK")
@@ -98,7 +99,7 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
         
         
         let photo1 = UIImage(named: "keto")!
-        let user1 = User(name: "Austin M", photo: photo1, username: "temp", password: "temp",
+        let user1 = User(name: "Austin M", photo: photo1, username: "blad", password: "temp",
                          email: "@temp")
         
         let team1 = VitalTeam(name: "Keto2", photo: photo1, vitalFellows: [user1!], vitalLeaders: user1!)
