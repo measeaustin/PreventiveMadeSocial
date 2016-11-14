@@ -148,9 +148,7 @@ class VitalTableViewController: UITableViewController {
         let team1 = VitalTeam(name: "Keto3", photo: photo1, vitalFellows: [user1!], vitalLeaders: user1!)
         
         let team2 = VitalTeam(name: "Not Keto3", photo: photo1, vitalFellows: [user1!], vitalLeaders: user1!)
-        
-        //Allteams.append(team1!)
-        //Allteams.append(team2!)
+       
         
         Allteams.append(team1!)
         Allteams.append(team2!)

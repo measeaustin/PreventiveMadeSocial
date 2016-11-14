@@ -50,6 +50,7 @@ class JoinGroupViewController: UIViewController {
                 team.vitalFellows.append(ThisUser)
             }
         }
+        performSegue(withIdentifier: "JoinIdentifier", sender: self)
     }
 
 }
