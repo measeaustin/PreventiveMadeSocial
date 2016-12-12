@@ -13,6 +13,8 @@ class JoinGroupViewController: UIViewController {
     
     @IBOutlet weak var JoinTeamTextField: UITextField!
     @IBOutlet weak var JoinButton: UIButton!
+    @IBOutlet weak var JoinKetoButton: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +42,19 @@ class JoinGroupViewController: UIViewController {
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    }*/
+    
+    
+    @IBAction func KetoPressed(_ sender: AnyObject) {
+        let photo1 = UIImage(named: "keto")!
+        let user1 = User(name: "Austin M", photo: photo1, username: "blad", password: "temp",
+                         email: "@temp")
+        
+        let team1 = VitalTeam(name: "Keto2", photo: photo1, vitalFellows: [ThisUser], vitalLeaders: user1!)
+        
+        UserTeams.append(team1!)
     }
-    */
+ 
     @IBAction func JoinClicked(_ sender: AnyObject) {
         let s = JoinTeamTextField.text
         for team in Allteams {

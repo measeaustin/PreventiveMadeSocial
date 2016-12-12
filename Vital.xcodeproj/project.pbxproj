@@ -75,6 +75,7 @@
 		A852439B1DA064CC0031A818 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Framework/Bolts.framework; sourceTree = "<group>"; };
 		A8908C231DC27A3A00E14FEE /* VitalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VitalTableViewCell.swift; sourceTree = "<group>"; };
 		A8DDCC171DC7BDEE007BA79A /* CreateNewGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewGroupViewController.swift; sourceTree = "<group>"; };
+		A8F3674E1DDCD912000F167D /* Vital.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vital.entitlements; sourceTree = "<group>"; };
 		B37D55988F65913D16D3EC3B /* Pods-Vital.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vital.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vital/Pods-Vital.release.xcconfig"; sourceTree = "<group>"; };
 		D5DC0FD832A4F4F06C52AD4A /* Pods-VitalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VitalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VitalTests/Pods-VitalTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +147,7 @@
 		A82BC7481D972A840048D933 /* Vital */ = {
 			isa = PBXGroup;
 			children = (
+				A8F3674E1DDCD912000F167D /* Vital.entitlements */,
 				A82BC7491D972A840048D933 /* AppDelegate.swift */,
 				A82BC74B1D972A840048D933 /* FirstViewController.swift */,
 				A83789231DB498F5008B9529 /* User.swift */,
@@ -270,7 +272,13 @@
 				TargetAttributes = {
 					A82BC7451D972A840048D933 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = JR38P3Q6KP;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					A82BC75B1D972A840048D933 = {
 						CreatedOnToolsVersion = 8.0;
@@ -617,6 +625,8 @@
 			baseConfigurationReference = 0648D0007ED10B97188CF30A /* Pods-Vital.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Vital/Vital.entitlements;
+				DEVELOPMENT_TEAM = JR38P3Q6KP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/austinmease/Documents/Vital/Vital/Framework,
@@ -637,6 +647,8 @@
 			baseConfigurationReference = B37D55988F65913D16D3EC3B /* Pods-Vital.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Vital/Vital.entitlements;
+				DEVELOPMENT_TEAM = JR38P3Q6KP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/austinmease/Documents/Vital/Vital/Framework,

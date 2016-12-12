@@ -127,21 +127,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="VitalCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="VitalCell" textLabel="Vda-sM-VPa" detailTextLabel="2C2-gc-iLJ" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="FIs-ya-lZC" customClass="VitalTableViewCell" customModule="Vital" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FIs-ya-lZC" id="6Ox-y7-s5i">
-                                    <frame key="frameInset" width="375" height="89.5"/>
+                                    <frame key="frameInset" width="375" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vda-sM-VPa">
-                                            <frame key="frameInset" minX="15" minY="28" width="33.5" height="20.5"/>
+                                            <frame key="frameInset" minX="15" minY="27" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2C2-gc-iLJ">
-                                            <frame key="frameInset" minX="15" minY="48.5" width="44" height="14.5"/>
+                                            <frame key="frameInset" minX="15" minY="48" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -208,6 +208,16 @@
                                     <action selector="JoinClicked:" destination="Up9-GJ-RSI" eventType="touchUpInside" id="jBZ-Pi-E9K"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mba-or-yEe">
+                                <frame key="frameInset" minX="145" minY="422" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Join Keto!">
+                                    <color key="titleShadowColor" red="0.30343898860000001" green="0.73871755019999996" blue="0.70073874449999995" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="KetoPressed:" destination="Up9-GJ-RSI" eventType="touchUpInside" id="XUF-fL-kxU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -225,6 +235,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="JoinButton" destination="iZc-ok-pyP" id="iwc-gT-VlE"/>
+                        <outlet property="JoinKetoButton" destination="mba-or-yEe" id="pnB-nG-SX0"/>
                         <outlet property="JoinTeamTextField" destination="5sN-Cj-ga3" id="0K5-1W-WpH"/>
                         <outlet property="searchDisplayController" destination="jTv-tH-d4p" id="IYf-mw-iJc"/>
                     </connections>
@@ -239,7 +250,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1295" y="354"/>
+            <point key="canvasLocation" x="1293.5999999999999" y="353.9730134932534"/>
         </scene>
         <!--Create New Vital Group-->
         <scene sceneID="STs-oy-vKD">
@@ -425,7 +436,7 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T4Z-CI-WV9"/>
-        <segue reference="Mrj-Xr-0hn"/>
+        <segue reference="7Fb-0q-ylU"/>
+        <segue reference="NbU-bU-AXe"/>
     </inferredMetricsTieBreakers>
 </document>

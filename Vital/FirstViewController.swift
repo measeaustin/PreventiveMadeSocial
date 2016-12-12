@@ -13,7 +13,7 @@ import FBSDKLoginKit
 var ThisUser: User = User(name: "Temp", photo: nil, username: "temp", password: "temp",
                           email: "@temp")!
 
-class FirstViewController: UIViewController, UITextFieldDelegate {
+class FirstViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -24,26 +24,38 @@ class FirstViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var FacebookLogin: UIButton!
     
     
+    var fbLoginSuccess = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadSampleTeam()
-
-        if ((FBSDKAccessToken.current()) != nil) {
-            performSegue(withIdentifier: "UserVitalTeam", sender: self)
-        }
         
         // Do any additional setup after loading the view, typically from a nib.
         let loginButton = FBSDKLoginButton()
-        loginButton.center = self.view.center
+        //loginButton.center = self.view.center
+        loginButton.frame = CGRect(x: 16, y: 500, width: view.frame.width - 32, height: 50)
+        loginButton.delegate = self
         self.view.addSubview(loginButton)
         
-        if ((FBSDKAccessToken.current()) != nil) {
-            performSegue(withIdentifier: "UserVitalTeam", sender: self)
-        }
+        
         
     }
-   
+    override func viewDidAppear(_ animated: Bool) {
+        if (FBSDKAccessToken.current() != nil && fbLoginSuccess == true)
+        {
+            performSegue(withIdentifier: "UserVitalTeam", sender: self)
+        }
+    }
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+    }
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error != nil {
+            print(error)
+            return
+        }
+        fbLoginSuccess = true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
